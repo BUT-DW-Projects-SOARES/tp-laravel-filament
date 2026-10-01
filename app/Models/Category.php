@@ -13,4 +13,9 @@ class Category extends Model
     protected $fillable = [
         'label',
     ];
+
+    public function alerts()
+    {
+        return $this->hasMany(Alert::class);
+    }
 }
