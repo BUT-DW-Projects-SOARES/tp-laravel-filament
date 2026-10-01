@@ -7,6 +7,7 @@ use App\Filament\Resources\Alerts\Pages\EditAlert;
 use App\Filament\Resources\Alerts\Pages\ListAlerts;
 use App\Filament\Resources\Alerts\Pages\ViewAlert;
 use App\Filament\Resources\Alerts\Schemas\AlertForm;
+use App\Filament\Resources\Alerts\Schemas\AlertInfolist;
 use App\Filament\Resources\Alerts\Tables\AlertsTable;
 use App\Models\Alert;
 use BackedEnum;
@@ -14,6 +15,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Override;
 
 class AlertResource extends Resource
 {
@@ -31,6 +33,11 @@ class AlertResource extends Resource
     public static function table(Table $table): Table
     {
         return AlertsTable::configure($table);
+    }
+
+    public static function infolist(Schema $schema): Schema
+    {
+        return AlertInfolist::configure($schema);
     }
 
     public static function getRelations(): array
