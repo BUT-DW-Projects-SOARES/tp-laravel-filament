@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\AlertLevel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,10 +16,12 @@ class Alert extends Model
         'published_at',
         'description',
         'category_id',
+        'level',
     ];
 
     protected $casts = [
         'published_at' => 'datetime',
+        'level' => AlertLevel::class,
     ];
 
     public function category()

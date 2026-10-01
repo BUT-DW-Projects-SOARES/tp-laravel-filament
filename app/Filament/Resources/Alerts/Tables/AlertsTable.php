@@ -16,13 +16,19 @@ class AlertsTable
             ->columns([
                 TextColumn::make('title')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->wrap(),
                 TextColumn::make('published_at')
                     ->dateTime()
                     ->sortable(),
-                TextColumn::make('category.label')
+                TextColumn::make('level')
+                    ->badge()
                     ->sortable(),
-                TextColumn::make('tags.label'),
+                TextColumn::make('category.label')
+                    ->sortable()
+                    ->wrap(),
+                TextColumn::make('tags.label')
+                    ->badge(),
             ])
             ->filters([
                 //
