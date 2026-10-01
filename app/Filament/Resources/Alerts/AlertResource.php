@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Alerts;
 use App\Filament\Resources\Alerts\Pages\CreateAlert;
 use App\Filament\Resources\Alerts\Pages\EditAlert;
 use App\Filament\Resources\Alerts\Pages\ListAlerts;
+use App\Filament\Resources\Alerts\Pages\ViewAlert;
 use App\Filament\Resources\Alerts\Schemas\AlertForm;
 use App\Filament\Resources\Alerts\Tables\AlertsTable;
 use App\Models\Alert;
@@ -44,6 +45,7 @@ class AlertResource extends Resource
         return [
             'index' => ListAlerts::route('/'),
             'create' => CreateAlert::route('/create'),
+            'view' => ViewAlert::route('/{record}'),
             'edit' => EditAlert::route('/{record}/edit'),
         ];
     }
