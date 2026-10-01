@@ -28,6 +28,7 @@ class CategoriesTable
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('label');
     }
 }
