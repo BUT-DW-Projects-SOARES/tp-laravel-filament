@@ -29,6 +29,10 @@ class AlertForm
                         'label',
                         fn(Builder $query) => $query->orderBy('label')
                     ),
+                Select::make('tags')
+                    ->relationship('tags', 'label', fn(Builder $query) => $query->orderBy('label'))
+                    ->multiple()
+                    ->preload(),
             ]);
     }
 }

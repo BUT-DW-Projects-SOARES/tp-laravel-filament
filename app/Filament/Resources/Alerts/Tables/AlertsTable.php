@@ -22,6 +22,7 @@ class AlertsTable
                     ->sortable(),
                 TextColumn::make('category.label')
                     ->sortable(),
+                TextColumn::make('tags.label'),
             ])
             ->filters([
                 //
