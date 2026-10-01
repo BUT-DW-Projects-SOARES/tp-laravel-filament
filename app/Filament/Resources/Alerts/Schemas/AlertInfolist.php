@@ -12,20 +12,20 @@ class AlertInfolist
         return $schema
             ->components([
                 TextEntry::make('title')
-                    ->label('Label'),
+                    ->label(__('filament/resources/alert.fields.title')),
                 TextEntry::make('published_at')
-                    ->dateTime()
-                    ->label('Published at'),
+                    ->label(__('filament/resources/alert.fields.published_at'))
+                    ->dateTime(),
                 TextEntry::make('description')
-                    ->label('Description')
+                    ->label(__('filament/resources/alert.fields.description'))
                     ->columnSpanFull(),
                 TextEntry::make('category.label')
-                    ->label('Category'),
+                    ->label(__('filament/resources/alert.fields.category')),
                 TextEntry::make('tags.label')
-                    ->label('Tags')
+                    ->label(__('filament/resources/alert.fields.tags'))
                     ->badge(),
                 TextEntry::make('level')
-                    ->label('Level')
+                    ->label(__('filament/resources/alert.fields.level'))
                     ->badge(),
             ]);
     }
