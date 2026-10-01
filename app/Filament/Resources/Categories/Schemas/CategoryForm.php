@@ -11,7 +11,8 @@ class CategoryForm
     {
         return $schema
             ->components([
-                TextInput::make('label'),
+                TextInput::make('label')
+                    ->required(),
             ]);
     }
 }
