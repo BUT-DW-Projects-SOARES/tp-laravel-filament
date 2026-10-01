@@ -24,7 +24,7 @@ class AlertsTable
                     ->wrap(),
                 TextColumn::make('published_at')
                     ->label(__('filament/resources/alert.fields.published_at'))
-                    ->dateTime()
+                    ->isoDateTime('L HH:mm')
                     ->sortable(),
                 TextColumn::make('level')
                     ->label(__('filament/resources/alert.fields.level'))

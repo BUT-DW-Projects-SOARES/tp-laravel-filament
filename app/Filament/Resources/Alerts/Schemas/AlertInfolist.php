@@ -15,7 +15,7 @@ class AlertInfolist
                     ->label(__('filament/resources/alert.fields.title')),
                 TextEntry::make('published_at')
                     ->label(__('filament/resources/alert.fields.published_at'))
-                    ->dateTime(),
+                    ->isoDateTime('L HH:mm'),
                 TextEntry::make('description')
                     ->label(__('filament/resources/alert.fields.description'))
                     ->columnSpanFull(),
