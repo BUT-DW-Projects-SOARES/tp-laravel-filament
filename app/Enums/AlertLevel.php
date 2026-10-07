@@ -28,12 +28,7 @@ enum AlertLevel: string implements HasColor, HasLabel, HasIcon
 
     public function getLabel(): string|Htmlable|null
     {
-        return match ($this) {
-            self::Info => 'information',
-            self::Critical => 'critical',
-            self::Warning => 'warning',
-            default => '',
-        };
+        return __('enums/alert-levels.' . $this->value);
     }
 
     public function getIcon(): string|BackedEnum|Htmlable|null

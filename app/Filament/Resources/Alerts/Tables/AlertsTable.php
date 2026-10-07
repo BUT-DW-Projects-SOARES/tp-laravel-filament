@@ -6,6 +6,7 @@ use App\Enums\AlertLevel;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -17,19 +18,24 @@ class AlertsTable
         return $table
             ->columns([
                 TextColumn::make('title')
+                    ->label(__('filament/resources/alert.fields.title'))
                     ->searchable()
                     ->sortable()
                     ->wrap(),
                 TextColumn::make('published_at')
-                    ->dateTime()
+                    ->label(__('filament/resources/alert.fields.published_at'))
+                    ->isoDateTime('L HH:mm')
                     ->sortable(),
                 TextColumn::make('level')
+                    ->label(__('filament/resources/alert.fields.level'))
                     ->badge()
                     ->sortable(),
                 TextColumn::make('category.label')
+                    ->label(__('filament/resources/alert.fields.category'))
                     ->sortable()
                     ->wrap(),
                 TextColumn::make('tags.label')
+                    ->label(__('filament/resources/alert.fields.tags'))
                     ->badge(),
             ])
             ->filters([
@@ -37,7 +43,7 @@ class AlertsTable
                     ->options(AlertLevel::class),
             ])
             ->recordActions([
-                EditAction::make(),
+                ViewAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
